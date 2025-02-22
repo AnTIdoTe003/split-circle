@@ -1,14 +1,15 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore } from '@firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyCTv65_TnqWq_qs3BtAU9wh4Vee5f3AwL8",
+  authDomain: "splitcircle-3a84a.firebaseapp.com",
+  projectId: "splitcircle-3a84a",
+  storageBucket: "splitcircle-3a84a.firebasestorage.app",
+  messagingSenderId: "810546057582",
+  appId: "1:810546057582:web:e81e7ad875a6dc3ba7b17f",
+  measurementId: "G-FWVT93R8KN"
 };
 
 const app = initializeApp(firebaseConfig);

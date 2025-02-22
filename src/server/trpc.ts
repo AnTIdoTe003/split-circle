@@ -1,13 +1,10 @@
-import { initTRPC } from '@trpc/server';
-import superjson from 'superjson';
-import { inferProcedureOutput } from '@trpc/server';
+import { initTRPC } from "@trpc/server";
+import superjson from "superjson";
+import { AppContext } from "@/pages/api/trpc/[trpc]";
 
-const t = initTRPC.context<{}>().create({
-    transformer: superjson,
+const t = initTRPC.context<AppContext>().create({
+  transformer: superjson,
 });
 
-export const createContext = ({ req, res }: { req: NextApiRequest; res: NextApiResponse }) => ({ req, res });
-export type Context = ReturnType<typeof createContext>;
-
-export const trpc = t;
-export type inferQueryResponse<TRouteKey extends keyof tRouter['_def']['queries']> = inferProcedureOutput<tRouter['_def']['queries'][TRouteKey]>;
+export const router = t.router;
+export const publicProcedure = t.procedure;
